@@ -4,6 +4,7 @@
     width: 250px;
     border-radius: 10%;
     background-color: black;
+    border: 10px solid black;
 }
 
 .heading{
@@ -33,6 +34,6 @@
 }
 
 .game-over {
-    background-color: red;
+    background-color: #430f83;
     opacity: 0.8;
 }

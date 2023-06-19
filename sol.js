@@ -35,9 +35,12 @@ function isCorrect(){
     }
     return true;
 }
+
+let valid = 1;
+
 let userSelect = function(){
     $(".box").on("click",function(){
-        if(level != 0){
+        if(level != 0 && valid && userPattern.length < gamePattern.length){
             let audio = new Audio(`./sounds/${this.classList[0]}.mp3`);
             audio.play();
             userPattern.push(this.classList[0]);
@@ -59,12 +62,17 @@ let userSelect = function(){
                 }
             }else{
                 console.log("No");
+                valid = 0;
                 let audio = new Audio(`./sounds/mario.mp3`);
                 audio.play();
                 userPattern = [];
+                gamePattern = [];
+                document.querySelector("body").classList.toggle("game-over")
                 setTimeout(() => {
                     level = 0;
                     document.querySelector("h1").textContent = "Press a key to Start";
+                    valid = 1;
+                    document.querySelector("body").classList.toggle("game-over")
                 }, 3000);
             }
         }
@@ -83,9 +91,9 @@ let newSequence = function(){
 let level = 0;
 
 window.addEventListener("keypress",function(event){
-        if(level === 0){
-            level++;
-            document.querySelector("h1").textContent = ("Level "+level);
-            newSequence();
-        }
-    })
+    if(level === 0){
+        level++;
+        document.querySelector("h1").textContent = ("Level "+level);
+        newSequence();
+    }
+})
