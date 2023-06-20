@@ -58,7 +58,7 @@ let userSelect = function(){
                     document.querySelector("h1").textContent = ("Level "+level);
                     setTimeout(() => {
                         newSequence();
-                    }, 1000);
+                    }, 500);
                 }
             }else{
                 console.log("No");
