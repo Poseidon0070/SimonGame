@@ -97,3 +97,11 @@ window.addEventListener("keypress",function(event){
         newSequence();
     }
 })
+
+window.addEventListener("touchstart",function(event){
+    if(level === 0){
+        level++;
+        document.querySelector("h1").textContent = ("Level "+level);
+        newSequence();
+    }
+})
