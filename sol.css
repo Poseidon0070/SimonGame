@@ -37,3 +37,17 @@
     background-color: #430f83;
     opacity: 0.8;
 }
+
+@media only screen and (max-width: 900px) {
+    .box{
+        height: 150px;
+        width: 150px;
+    }
+    .heading{
+        font-size: medium;
+    }
+    .container{
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+}
